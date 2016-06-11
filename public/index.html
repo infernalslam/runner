@@ -1,0 +1,88 @@
+<!doctype html>
+<html ng-app="todoApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="todo.js"></script>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="todo.css"> -->
+  </head>
+  <body>
+    <div ng-controller="TodoListController as app">
+      {{app.title}}
+      ชื่อ-นามสกุล <input type="text" ng-model="input.name"> <br>
+      รหัสนักเรียน <input type="text" ng-model="input.id"> เลขที่  <input type="number" ng-model="input.number"> ระดับชั้น <input type="text" ng-model="input.class">
+      <br> อายุ : <input type="number" ng-model="input.age">
+      <br><br>
+      <table class="table" border="2">
+        <tr>
+          <td>กิจกรรมทดสอบการชั่งน้ำหนัก <br>
+            <form>
+            ชั่งน้ำหนัก <input type="number" ng-model="BMI.weight"> <br>
+            วัดส่วนสูง <input type="number" ng-model="BMI.height"><br>
+          </form>
+            BMI : {{app.BMI(BMI.weight / (app.Math.pow(BMI.height, 2) / 10000))}}
+          </td>
+          <td colspan="3"> <center> ผลการทดสอบภาคเรียนที่ 1 <br>
+          วัน/เดือน/ปี.......</td>
+        </tr>
+        <tr>
+          <td>ตาราง</td>
+          <td><center>ค่าที่ได้</td>
+          <td><center>ผลการทดสอบ</td>
+          <td><center>ลงชื่อผู้ควบคุม</td>
+        </tr>
+        
+        <tr>
+          <td>นั่งงอตัว</td>
+          <td><center><input type="number" ng-model="sitData"></td>
+          <td><center>{{app.sit(input.age, sitData)}}</td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td>ลุกนั่ง 60 วินาที (ครั้ง)</td>
+          <td><center><input type="number" ng-model="runData"></td>
+          <td><center>{{app.run(input.age, runData)}}</td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td>ดันพื้น 60 วินาที (ครั้ง)</td>
+          <td><center><input type="number" ng-model="pushData"></td>
+          <td><center>{{app.pus(input.age, pushData)}}</td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td>วิ่งอ้อมหลัก</td>
+          <td><center><input type="number" ng-model="runbackData"></td>
+          <td><center>{{app.runBack(input.age, runbackData)}}</td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td>เดินวิ่ง 800 เมตร</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td>เดินวิ่ง 1600 เมตร</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td>Howord Step Test</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        
+      </table>
+    </div>
+  </body>
+</html>
