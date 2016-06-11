@@ -328,5 +328,140 @@ angular.module('todoApp', [])
           return 'ต่ำมาก'
         }
       }
+      if (age === 13) {
+        if (runback <= 17.69) {
+          app.runback = 'ดีมาก'
+          return 'ดีมาก'
+        }
+        if (runback >= 17.70 && runback <= 18.82) {
+          app.runback = 'ดี'
+          return 'ดี'
+        }
+        if (runback >= 18.83 && runback <= 19.95) {
+          app.runback = 'ปานกลาง'
+          return 'ปานกลาง'
+        }
+        if (runback >= 19.96 && runback <= 21.08) {
+          app.runback = 'ต่ำ'
+          return 'ต่ำ'
+        }
+        if (runback >= 21.09) {
+          app.runback = 'ต่ำมาก'
+          return 'ต่ำมาก'
+        }
+      } // age 13
+      if (age === 14) {
+        if (runback <= 17.36) {
+          app.runback = 'ดีมาก'
+          return 'ดีมาก'
+        }
+        if (runback >= 17.37 && runback <= 18.87) {
+          app.runback = 'ดี'
+          return 'ดี'
+        }
+        if (runback >= 18.88 && runback <= 20.38) {
+          app.runback = 'ปานกลาง'
+          return 'ปานกลาง'
+        }
+        if (runback >= 20.39 && runback <= 21.89) {
+          app.runback = 'ต่ำ'
+          return 'ต่ำ'
+        }
+        if (runback >= 21.90) {
+          app.runback = 'ต่ำมาก'
+          return 'ต่ำมาก'
+        }
+      } // age 14
+      if (age === 15) {
+        if (runback <= 17.27) {
+          app.runback = 'ดีมาก'
+          return 'ดีมาก'
+        }
+        if (runback >= 17.28 && runback <= 18.90) {
+          app.runback = 'ดี'
+          return 'ดี'
+        }
+        if (runback >= 18.91 && runback <= 20.93) {
+          app.runback = 'ปานกลาง'
+          return 'ปานกลาง'
+        }
+        if (runback >= 20.94 && runback <= 22.16) {
+          app.runback = 'ต่ำ'
+          return 'ต่ำ'
+        }
+        if (runback >= 22.17) {
+          app.runback = 'ต่ำมาก'
+          return 'ต่ำมาก'
+        }
+      } // age 15
+      if (age === 16) {
+        if (runback <= 17.17) {
+          app.runback = 'ดีมาก'
+          return 'ดีมาก'
+        }
+        if (runback >= 17.18 && runback <= 18.58) {
+          app.runback = 'ดี'
+          return 'ดี'
+        }
+        if (runback >= 18.59 && runback <= 19.99) {
+          app.runback = 'ปานกลาง'
+          return 'ปานกลาง'
+        }
+        if (runback >= 20.00 && runback <= 21.40) {
+          app.runback = 'ต่ำ'
+          return 'ต่ำ'
+        }
+        if (runback >= 21.41) {
+          app.runback = 'ต่ำมาก'
+          return 'ต่ำมาก'
+        }
+      } // age 16
+      if (age === 17) {
+        if (runback <= 16.93) {
+          app.runback = 'ดีมาก'
+          return 'ดีมาก'
+        }
+        if (runback >= 16.94 && runback <= 18.10) {
+          app.runback = 'ดี'
+          return 'ดี'
+        }
+        if (runback >= 18.11 && runback <= 19.27) {
+          app.runback = 'ปานกลาง'
+          return 'ปานกลาง'
+        }
+        if (runback >= 19.28 && runback <= 20.44) {
+          app.runback = 'ต่ำ'
+          return 'ต่ำ'
+        }
+        if (runback >= 20.45) {
+          app.runback = 'ต่ำมาก'
+          return 'ต่ำมาก'
+        }
+      } // age 17
+      if (age === 18) {
+        if (runback <= 16.87) {
+          app.runback = 'ดีมาก'
+          return 'ดีมาก'
+        }
+        if (runback >= 16.88 && runback <= 17.90) {
+          app.runback = 'ดี'
+          return 'ดี'
+        }
+        if (runback >= 17.91 && runback <= 18.93) {
+          app.runback = 'ปานกลาง'
+          return 'ปานกลาง'
+        }
+        if (runback >= 18.94 && runback <= 19.96) {
+          app.runback = 'ต่ำ'
+          return 'ต่ำ'
+        }
+        if (runback >= 19.97) {
+          app.runback = 'ต่ำมาก'
+          return 'ต่ำมาก'
+        }
+      } // age 18
+    }
+    app.runwalk = function (age, runwalk) {
+      console.log(age, runwalk)
     }
   })
