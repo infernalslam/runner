@@ -14,7 +14,7 @@
           <ul class="nav nav-tabs" ng-init="page=1">
             <li role="presentation" class="active"><a href="#" ng-click="page=1">ทดสอบ</a></li>
             <li role="presentation"><a href="#" ng-click="page=2">รายงาน</a></li>
-            <li role="presentation"><a href="#"></a></li>
+            <li role="presentation"><a href="#" ng-click="page=3">กราฟ</a></li>
           </ul>
         </div>
       </div>
@@ -168,5 +168,23 @@
   </div>
 </div>
     
+    
+    
+  <div ng-show="page === 3">
+    <input type="text" ng-model="searchText">
+    <div ng-repeat="show in app.data">
+        {{show.id}}
+        {{show.name}}
+        {{show.class}}
+        {{show.bmi}}
+        {{show.sit}}
+        {{show.run}}
+        {{show.pus}}
+        {{show.runback}}
+    </div>
+  </div>  
+  
+  
+  
   </body>
 </html>
