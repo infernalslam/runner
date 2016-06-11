@@ -4,13 +4,18 @@ angular.module('todoApp', [])
     var app = this
     app.title = 'แบบบันทึกการทดสอบสมถรรภาพทางกายนักเรียนโรงเรียนสตรีวิทยา ปีการศึกษา2559'
     app.Math = window.Math
+    app.totalBMI = 0
     app.BMI = function (data) {
       var num = data.toString()
       var totalBMI = num.substring(0, 5)
+      app.totalBMI = totalBMI
       return totalBMI // bni number
     }
     // app.sit(sitData)
     app.showSit = ''
+    app.showRun = ''
+    app.showPus = ''
+    app.runback = ''
     app.sit = function (age, sit) {
       if (age === 13 || age === 12) {
         if (sit >= 14) {
@@ -465,11 +470,13 @@ angular.module('todoApp', [])
       console.log(age, runwalk)
     }
     app.data = []
+    getData()
+    function getData () {
+      $http.get('https://incandescent-heat-9691.firebaseio.com/data.json').then(function (res) {
+        app.data = res.data
+      })
+    }
     app.add = function (input, sit, run, pus, runback) {
-      // $http.get('https://incandescent-heat-9691.firebaseio.com/data.json').then(function success (res) {
-      //   app.data = res.data
-      //   console.log(app.data)
-      // })
       var data = {
         name: input.name,
         id: input.id,
@@ -479,8 +486,12 @@ angular.module('todoApp', [])
         sit: app.showSit,
         run: app.showRun,
         pus: app.showPus,
-        runback: app.runback
+        runback: app.runback,
+        bmi: app.totalBMI
       }
-      console.log(data)
+      $http.post('https://incandescent-heat-9691.firebaseio.com/data.json', data).then(function success (res) {
+        console.log('https://incandescent-heat-9691.firebaseio.com/data.json' + 'checkdatabase')
+        getData()
+      })
     }
   })
