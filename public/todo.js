@@ -1,6 +1,6 @@
 /* global angular*/
 angular.module('todoApp', [])
-  .controller('TodoListController', function () {
+  .controller('TodoListController', function ($http) {
     var app = this
     app.title = 'แบบบันทึกการทดสอบสมถรรภาพทางกายนักเรียนโรงเรียนสตรีวิทยา ปีการศึกษา2559'
     app.Math = window.Math
@@ -463,5 +463,24 @@ angular.module('todoApp', [])
     }
     app.runwalk = function (age, runwalk) {
       console.log(age, runwalk)
+    }
+    app.data = []
+    app.add = function (input, sit, run, pus, runback) {
+      // $http.get('https://incandescent-heat-9691.firebaseio.com/data.json').then(function success (res) {
+      //   app.data = res.data
+      //   console.log(app.data)
+      // })
+      var data = {
+        name: input.name,
+        id: input.id,
+        number: input.number,
+        class: input.class,
+        age: input.age,
+        sit: app.showSit,
+        run: app.showRun,
+        pus: app.showPus,
+        runback: app.runback
+      }
+      console.log(data)
     }
   })

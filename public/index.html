@@ -63,8 +63,10 @@
         
         <tr>
           <td>เดินวิ่ง 800 เมตร</td>
-          <td><center><input type="number" ng-model="runwalkData"></td>
-          <td><center>{{app.runwalk(input.age, runwalkData)}}</td>
+          <td></td>
+          <!-- <td><center><input type="number" ng-model="runwalkData"></td> -->
+          <td></td>
+          <!-- <td><center>{{app.runwalk(input.age, runwalkData)}}</td> -->
           <td></td>
         </tr>
         
@@ -83,6 +85,14 @@
         </tr>
         
       </table>
+      <button ng-click="app.add(input, sitData, runData, pushData, runbackData)">สอบผ่านหมดเเล้ว</button>
+    </div>
+    <div ng-repeat="show in app.data">
+      ชื่อ : {{show.name}}
+      รหัสนักเรียน : {{show.id}}
+      เลขที่ : {{show.number}}
+      ระดับชั้น: {{show.class}}
+      อายุ : {{show.age}}
     </div>
   </body>
 </html>
