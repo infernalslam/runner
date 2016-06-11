@@ -14,12 +14,13 @@
           <ul class="nav nav-tabs" ng-init="page=1">
             <li role="presentation" class="active"><a href="#" ng-click="page=1">ทดสอบ</a></li>
             <li role="presentation"><a href="#" ng-click="page=2">รายงาน</a></li>
-            <li role="presentation"><a href="#">{{app.title}}</a></li>
+            <li role="presentation"><a href="#"></a></li>
           </ul>
         </div>
       </div>
     </div>
 
+    <center><h3>{{app.title}}</h3></center>
 
 <div ng-show="page === 1">
     <!-- หน้ากรอกชื่อ -->
@@ -33,6 +34,8 @@
                 <td><input type="text" ng-model="input.id"></td>
                 <td><label>ชื่อ-นามสกุล</label></td>
                 <td><input type="text" ng-model="input.name"></td>
+                <!-- <td><label>เลขที่</label></td>
+                <td><input type="number" ng-model="input.number"></td> -->
                 <td><label>ระดับชั้น</label></td>
                 <td><label><input type="text" ng-model="input.class"></label></td>
                 <td><label>อายุ</label></td>
@@ -97,7 +100,7 @@
             </tr>
             
             <tr>
-              <td>เดินวิ่ง 800 เมตร</td>
+              <td>ยืนกระโดดไกล</td>
               <td></td>
               <!-- <td><center><input type="number" ng-model="runwalkData"></td> -->
               <td></td>
@@ -105,8 +108,8 @@
               <td></td>
             </tr>
             
-            <tr>
-              <td>เดินวิ่ง 1600 เมตร</td>
+            <!-- <tr>
+              <td>เดินวิ่ง 1200 เมตร</td>
               <td></td>
               <td></td>
               <td></td>
@@ -117,7 +120,7 @@
               <td></td>
               <td></td>
               <td></td>
-            </tr>  
+            </tr>   -->
           </table>
         </div>
       </div>
@@ -126,21 +129,44 @@
   </div>
 </div>    
     
+    
+    
   <div ng-show="page === 2"
-      <div ng-repeat="show in app.data">
-        ชื่อ : {{show.name}}
-        รหัสนักเรียน : {{show.id}}
-        เลขที่ : {{show.number}}
-        ระดับชั้น: {{show.class}}
-        อายุ : {{show.age}} 
-        ค่า: {{show.bmi}} <br>
-        ---------ผลการทดลอง-------------- <br>
-        ดันพื้น 60 วินาที (ครั้ง):{{show.pus}} <br>
-        ลุกนั่ง 60 วินาที (ครั้ง) :{{show.run}} <br>
-        ดันพื้น 60 วินาที (ครั้ง):{{show.runback}} <br>
-        นั่งงอตัว:{{show.sit}}
+      
+      <!-- เเสดงผล -->
+      <div class="container">
+        <div class ="row">
+          <div class = "col-xs-12">
+          <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>รหัสนักเรียน</th>
+            <th>ชื่อนามสกุล</th>
+            <th>ห้อง</th>
+            <th>BMI</th>
+            <th>นั่งงอตัว</th>
+            <th>ลุกนั่ง</th>
+            <th>ดันพื้น</th>
+            <th>วิ่งอ้อมหลัก</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="show in app.data">
+            <td>{{show.id}}</td>
+            <td>{{show.name}}</td>
+            <td>{{show.class}}</td>
+            <td>{{show.bmi}}</td>
+            <td>{{show.sit}}</td>
+            <td>{{show.run}}</td>
+            <td>{{show.pus}}</td>
+            <td>{{show.runback}}</td>
+          </tr>
+        </tbody>
+      </table>
       </div>
     </div>
+  </div>
+</div>
     
   </body>
 </html>

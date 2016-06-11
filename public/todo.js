@@ -5,11 +5,30 @@ angular.module('todoApp', [])
     app.title = 'แบบบันทึกการทดสอบสมถรรภาพทางกายนักเรียนโรงเรียนสตรีวิทยา ปีการศึกษา2559'
     app.Math = window.Math
     app.totalBMI = 0
+    app.textBMI = ''
     app.BMI = function (data) {
       var num = data.toString()
       var totalBMI = num.substring(0, 5)
       app.totalBMI = totalBMI
-      return totalBMI // bni number
+      if (data >= 40) {
+        app.textBMI = 'อ้วน'
+      }
+      if (data >= 35 && data <= 39.99) {
+        app.textBMI = 'อ้วนระดับ 2'
+      }
+      if (data >= 28.5 && data <= 34.9) {
+        app.textBMI = 'อ้วนระดับ 1'
+      }
+      if (data >= 23.5 && data <= 28.4) {
+        app.textBMI = 'น้ำหนักเกิน'
+      }
+      if (data >= 18.5 && data <= 23.4) {
+        app.textBMI = 'น้ำหนักปกติ'
+      }
+      if (data <= 18.5) {
+        app.textBMI = 'น้ำหนักน้อยเกินไป'
+      }
+      return totalBMI + ' : ' + (app.textBMI) // bni number
     }
     // app.sit(sitData)
     app.showSit = ''
@@ -480,14 +499,13 @@ angular.module('todoApp', [])
       var data = {
         name: input.name,
         id: input.id,
-        number: input.number,
         class: input.class,
         age: input.age,
         sit: app.showSit,
         run: app.showRun,
         pus: app.showPus,
         runback: app.runback,
-        bmi: app.totalBMI
+        bmi: app.textBMI
       }
       $http.post('https://incandescent-heat-9691.firebaseio.com/data.json', data).then(function success (res) {
         console.log('https://incandescent-heat-9691.firebaseio.com/data.json' + 'checkdatabase')
