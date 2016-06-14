@@ -1,4 +1,4 @@
-/* global angular*/
+/* global angular alert*/
 angular.module('todoApp', [])
   .controller('TodoListController', function ($http) {
     var app = this
@@ -508,8 +508,9 @@ angular.module('todoApp', [])
         bmi: app.textBMI
       }
       $http.post('https://incandescent-heat-9691.firebaseio.com/data.json', data).then(function success (res) {
-        console.log('https://incandescent-heat-9691.firebaseio.com/data.json' + 'checkdatabase')
+        console.log('https://incandescent-heat-9691.firebaseio.com/data.json' + '  checkdatabase')
         getData()
       })
+      alert('ข้อมูลบันทึกสำเร็จเเล้ว')
     }
   })
